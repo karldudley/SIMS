@@ -1,6 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
-function Home({ achieveCount, behaviourCount }) {
+function Home() {
+  const achieveCount = useSelector(state => state.ach)
+  const behaviourCount = useSelector(state => state.beh)
+
   return (
     <>
     <h1>{achieveCount} achievement points</h1>

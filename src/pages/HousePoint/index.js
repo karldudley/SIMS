@@ -1,11 +1,20 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 
-function HousePoint({ achieveCount, handleCount }) {
+function HousePoint() {
+  const achieveCount = useSelector(state => state.ach)
+
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    dispatch({ type: "ADD_ACH" })
+  }
+  
   return (
     <>
     {achieveCount} achievement points
       <button 
-        onClick={handleCount}
+        onClick={handleClick}
         aria-label="Read Story">
         Add Achievement Point
       </button>
