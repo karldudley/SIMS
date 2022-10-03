@@ -7,6 +7,15 @@ function App() {
   const [achieveCount, setAchieveCount] = useState(0)
   const [behaviourCount, setBehaviourCount] = useState(0)
 
+  const data = [
+    {id: 1, name: 'Alice', ach: 0, beh: 0},
+    {id: 2, name: 'Bob', ach: 0, beh: 0},
+    {id: 3, name: 'Carl', ach: 0, beh: 0}
+  ];
+
+  const [students, setStudents] = useState(data)
+
+
   const onAchievementClick = () => {
     setAchieveCount(prevCount => prevCount + 1)
   }
@@ -19,6 +28,16 @@ function App() {
     <>
       <Header />
       <div className="main">
+        {/* {students.map((student, index) => {
+          return (
+            <div key={index}>
+              <h2>name: {student.name}</h2>
+              <h2>ach: {student.ach}</h2>
+              <h2>beh: {student.beh}</h2>
+            </div>
+          );
+        })} */}
+        
         <Routes>
           <Route path="/" element={<Home achieveCount = {achieveCount} behaviourCount = {behaviourCount} />} />
           <Route path="/housepoint" element={<HousePoint achieveCount = {achieveCount} handleCount = {onAchievementClick}/>} />
