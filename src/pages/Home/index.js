@@ -1,9 +1,13 @@
 import React from 'react'
 
-function Home() {
+function Home({ achieveCount, behaviourCount }) {
   return (
     <>
-    <h1>Overall</h1>
+    <h1>{achieveCount} achievement points</h1>
+    <h3>+</h3>
+    <h1>{behaviourCount} behaviour points</h1>
+    <h3>=</h3>
+    <h1>{achieveCount - behaviourCount} overall points</h1>
     </>
   );
 }

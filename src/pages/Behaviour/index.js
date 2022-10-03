@@ -1,9 +1,14 @@
 import React from 'react'
 
-function Behaviour() {
+function Behaviour({ behaviourCount, handleCount }) {
   return (
     <>
-    <h1>Add Behaviour Point</h1>
+      {behaviourCount} behaviour points
+      <button 
+        onClick={handleCount}
+        aria-label="Read Story">
+        Add Behaviour Point
+      </button>
     </>
   );
 }

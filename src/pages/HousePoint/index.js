@@ -1,9 +1,14 @@
 import React from 'react'
 
-function HousePoint() {
+function HousePoint({ achieveCount, handleCount }) {
   return (
     <>
-    <h1>Add House Point</h1>
+    {achieveCount} achievement points
+      <button 
+        onClick={handleCount}
+        aria-label="Read Story">
+        Add Achievement Point
+      </button>
     </>
   );
 }
